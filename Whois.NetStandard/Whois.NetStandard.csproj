@@ -1,0 +1,123 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PackOnBuild>true</PackOnBuild>
+    <PackageId>WhoisNetStandard</PackageId>
+    <PackageVersion>0.0.1</PackageVersion>
+    <Authors>superplex</Authors>
+    <PackageProjectUrl>https://github.com/flipbit/whois</PackageProjectUrl>
+    <Description>Fork of flipbit/whois build for .Net Standard.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="TokenizerNetStandard" Version="0.1.0" />
+    <PackageReference Include="NuGet.Build.Packaging" Version="0.2.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Whois\Contact.cs">
+      <Link>Contact.cs</Link>
+    </Compile>
+    <Compile Include="..\Whois\EmbeddedPatternReader.cs">
+      <Link>EmbeddedPatternReader.cs</Link>
+    </Compile>
+    <Compile Include="..\Whois\IWhoisLookup.cs">
+      <Link>IWhoisLookup.cs</Link>
+    </Compile>
+    <Compile Include="..\Whois\WhoisLookup.cs">
+      <Link>WhoisLookup.cs</Link>
+    </Compile>
+    <Compile Include="..\Whois\WhoisRecord.cs">
+      <Link>WhoisRecord.cs</Link>
+    </Compile>
+    <Compile Include="..\Whois\WhoisRedirect.cs">
+      <Link>WhoisRedirect.cs</Link>
+    </Compile>
+    <Compile Include="..\Whois\Cache\FileStore.cs">
+      <Link>Cache\FileStore.cs</Link>
+    </Compile>
+    <Compile Include="..\Whois\Cache\IFileStore.cs">
+      <Link>Cache\IFileStore.cs</Link>
+    </Compile>
+    <Compile Include="..\Whois\Cache\TcpReaderFileCache.cs">
+      <Link>Cache\TcpReaderFileCache.cs</Link>
+    </Compile>
+    <Compile Include="..\Whois\Extensions\ArrayListExtensions.cs">
+      <Link>Extensions\ArrayListExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Whois\Extensions\ExtensionAttribute.cs">
+      <Link>Extensions\ExtensionAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\Whois\Extensions\StringExtensions.cs">
+      <Link>Extensions\StringExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Whois\Net\ITcpReader.cs">
+      <Link>Net\ITcpReader.cs</Link>
+    </Compile>
+    <Compile Include="..\Whois\Net\ITcpReaderFactory.cs">
+      <Link>Net\ITcpReaderFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\Whois\Net\TcpReader.cs">
+      <Link>Net\TcpReader.cs</Link>
+    </Compile>
+    <Compile Include="..\Whois\Net\TcpReaderFactory.cs">
+      <Link>Net\TcpReaderFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\Whois\Servers\Contact.cs">
+      <Link>Servers\Contact.cs</Link>
+    </Compile>
+    <Compile Include="..\Whois\Servers\IWhoisServer.cs">
+      <Link>Servers\IWhoisServer.cs</Link>
+    </Compile>
+    <Compile Include="..\Whois\Servers\IWhoisServerLookup.cs">
+      <Link>Servers\IWhoisServerLookup.cs</Link>
+    </Compile>
+    <Compile Include="..\Whois\Servers\IanaServerLookup.cs">
+      <Link>Servers\IanaServerLookup.cs</Link>
+    </Compile>
+    <Compile Include="..\Whois\Servers\InternicServerLookup.cs">
+      <Link>Servers\InternicServerLookup.cs</Link>
+    </Compile>
+    <Compile Include="..\Whois\Servers\Organization.cs">
+      <Link>Servers\Organization.cs</Link>
+    </Compile>
+    <Compile Include="..\Whois\Servers\WhoisServer.cs">
+      <Link>Servers\WhoisServer.cs</Link>
+    </Compile>
+    <Compile Include="..\Whois\Servers\WhoisServerRecord.cs">
+      <Link>Servers\WhoisServerRecord.cs</Link>
+    </Compile>
+    <Compile Include="..\Whois\Validators\DomainValidator.cs">
+      <Link>Validators\DomainValidator.cs</Link>
+    </Compile>
+    <Compile Include="..\Whois\Visitors\DownloadVisitor.cs">
+      <Link>Visitors\DownloadVisitor.cs</Link>
+    </Compile>
+    <Compile Include="..\Whois\Visitors\ExpandResultsVisitor.cs">
+      <Link>Visitors\ExpandResultsVisitor.cs</Link>
+    </Compile>
+    <Compile Include="..\Whois\Visitors\IWhoisVisitor.cs">
+      <Link>Visitors\IWhoisVisitor.cs</Link>
+    </Compile>
+    <Compile Include="..\Whois\Visitors\PatternExtractorVisitor.cs">
+      <Link>Visitors\PatternExtractorVisitor.cs</Link>
+    </Compile>
+    <Compile Include="..\Whois\Visitors\RedirectVisitor.cs">
+      <Link>Visitors\RedirectVisitor.cs</Link>
+    </Compile>
+    <Compile Include="..\Whois\Visitors\WhoisServerVisitor.cs">
+      <Link>Visitors\WhoisServerVisitor.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Whois\Patterns\Domains\Csc.txt">
+      <Link>Patterns\Domains\Csc.txt</Link>
+    </None>
+    <None Include="..\Whois\Patterns\Redirects\Iana.txt">
+      <Link>Patterns\Redirects\Iana.txt</Link>
+    </None>
+    <None Include="..\Whois\Patterns\Servers\Iana.txt">
+      <Link>Patterns\Servers\Iana.txt</Link>
+    </None>
+  </ItemGroup>
+</Project>
