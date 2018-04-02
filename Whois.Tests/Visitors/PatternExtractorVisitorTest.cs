@@ -17,7 +17,7 @@ namespace Whois.Visitors
         [Test]
         public void TestParseRecord()
         {
-            var sample = File.ReadAllText("..\\..\\Samples\\Domains\\adobe.com.txt");
+            var sample = File.ReadAllText(Utils.GetFullPath("Samples/Domains/adobe.com.txt"));
 
             var record = new WhoisRecord(sample);
 

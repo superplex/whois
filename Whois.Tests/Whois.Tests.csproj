@@ -71,6 +71,7 @@
     <Compile Include="WhoisLookupTest.cs" />
     <Compile Include="Servers\InternicServerLookupTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Patterns\InvalidExtension.rtf" />
@@ -86,379 +87,1122 @@
     <EmbeddedResource Include="Patterns\TestPatternTwo.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Samples\Domains\adobe.com.txt" />
-    <Content Include="Samples\Domains\amazon.com.txt" />
-    <Content Include="Samples\Domains\apple.com.txt" />
-    <Content Include="Samples\Domains\baidu.com.txt" />
-    <Content Include="Samples\Domains\blogspot.com.txt" />
-    <Content Include="Samples\Domains\digg.com.txt" />
-    <Content Include="Samples\Domains\facebook.com.txt" />
-    <Content Include="Samples\Domains\flickr.com.txt" />
-    <Content Include="Samples\Domains\google.com.txt" />
-    <Content Include="Samples\Domains\linkedin.com.txt" />
-    <Content Include="Samples\Domains\microsoft.com.txt" />
-    <Content Include="Samples\Domains\myspace.com.txt" />
-    <Content Include="Samples\Domains\pinterest.com.txt" />
-    <Content Include="Samples\Domains\qq.com.txt" />
-    <Content Include="Samples\Domains\stumbleupon.com.txt" />
-    <Content Include="Samples\Domains\tumblr.com.txt" />
-    <Content Include="Samples\Domains\twitter.com.txt" />
-    <Content Include="Samples\Domains\vimeo.com.txt" />
-    <Content Include="Samples\Domains\w3.org.txt" />
-    <Content Include="Samples\Domains\wikipedia.org.txt" />
-    <Content Include="Samples\Domains\wordpress.com.txt" />
-    <Content Include="Samples\Domains\wordpress.org.txt" />
-    <Content Include="Samples\Domains\yahoo.com.txt" />
-    <Content Include="Samples\Domains\youtu.be.txt" />
-    <Content Include="Samples\Domains\youtube.com.txt" />
-    <Content Include="Samples\Tlds\abogado.txt" />
-    <Content Include="Samples\Tlds\ac.txt" />
-    <Content Include="Samples\Tlds\academy.txt" />
-    <Content Include="Samples\Tlds\accountants.txt" />
-    <Content Include="Samples\Tlds\active.txt" />
-    <Content Include="Samples\Tlds\actor.txt" />
-    <Content Include="Samples\Tlds\ad.txt" />
-    <Content Include="Samples\Tlds\ae.txt" />
-    <Content Include="Samples\Tlds\aero.txt" />
-    <Content Include="Samples\Tlds\af.txt" />
-    <Content Include="Samples\Tlds\ag.txt" />
-    <Content Include="Samples\Tlds\agency.txt" />
-    <Content Include="Samples\Tlds\ai.txt" />
-    <Content Include="Samples\Tlds\airforce.txt" />
-    <Content Include="Samples\Tlds\al.txt" />
-    <Content Include="Samples\Tlds\allfinanz.txt" />
-    <Content Include="Samples\Tlds\alsace.txt" />
-    <Content Include="Samples\Tlds\am.txt" />
-    <Content Include="Samples\Tlds\an.txt" />
-    <Content Include="Samples\Tlds\ao.txt" />
-    <Content Include="Samples\Tlds\aq.txt" />
-    <Content Include="Samples\Tlds\ar.txt" />
-    <Content Include="Samples\Tlds\archi.txt" />
-    <Content Include="Samples\Tlds\army.txt" />
-    <Content Include="Samples\Tlds\arpa.txt" />
-    <Content Include="Samples\Tlds\as.txt" />
-    <Content Include="Samples\Tlds\asia.txt" />
-    <Content Include="Samples\Tlds\associates.txt" />
-    <Content Include="Samples\Tlds\at.txt" />
-    <Content Include="Samples\Tlds\attorney.txt" />
-    <Content Include="Samples\Tlds\au.txt" />
-    <Content Include="Samples\Tlds\auction.txt" />
-    <Content Include="Samples\Tlds\audio.txt" />
-    <Content Include="Samples\Tlds\autos.txt" />
-    <Content Include="Samples\Tlds\aw.txt" />
-    <Content Include="Samples\Tlds\ax.txt" />
-    <Content Include="Samples\Tlds\axa.txt" />
-    <Content Include="Samples\Tlds\az.txt" />
-    <Content Include="Samples\Tlds\ba.txt" />
-    <Content Include="Samples\Tlds\band.txt" />
-    <Content Include="Samples\Tlds\bar.txt" />
-    <Content Include="Samples\Tlds\bargains.txt" />
-    <Content Include="Samples\Tlds\bayern.txt" />
-    <Content Include="Samples\Tlds\bb.txt" />
-    <Content Include="Samples\Tlds\bd.txt" />
-    <Content Include="Samples\Tlds\be.txt" />
-    <Content Include="Samples\Tlds\beer.txt" />
-    <Content Include="Samples\Tlds\berlin.txt" />
-    <Content Include="Samples\Tlds\best.txt" />
-    <Content Include="Samples\Tlds\bf.txt" />
-    <Content Include="Samples\Tlds\bg.txt" />
-    <Content Include="Samples\Tlds\bh.txt" />
-    <Content Include="Samples\Tlds\bi.txt" />
-    <Content Include="Samples\Tlds\bid.txt" />
-    <Content Include="Samples\Tlds\bike.txt" />
-    <Content Include="Samples\Tlds\bio.txt" />
-    <Content Include="Samples\Tlds\biz.txt" />
-    <Content Include="Samples\Tlds\bj.txt" />
-    <Content Include="Samples\Tlds\black.txt" />
-    <Content Include="Samples\Tlds\blackfriday.txt" />
-    <Content Include="Samples\Tlds\blue.txt" />
-    <Content Include="Samples\Tlds\bm.txt" />
-    <Content Include="Samples\Tlds\bmw.txt" />
-    <Content Include="Samples\Tlds\bn.txt" />
-    <Content Include="Samples\Tlds\bnpparibas.txt" />
-    <Content Include="Samples\Tlds\bo.txt" />
-    <Content Include="Samples\Tlds\boo.txt" />
-    <Content Include="Samples\Tlds\boutique.txt" />
-    <Content Include="Samples\Tlds\br.txt" />
-    <Content Include="Samples\Tlds\brussels.txt" />
-    <Content Include="Samples\Tlds\bs.txt" />
-    <Content Include="Samples\Tlds\bt.txt" />
-    <Content Include="Samples\Tlds\budapest.txt" />
-    <Content Include="Samples\Tlds\build.txt" />
-    <Content Include="Samples\Tlds\builders.txt" />
-    <Content Include="Samples\Tlds\business.txt" />
-    <Content Include="Samples\Tlds\buzz.txt" />
-    <Content Include="Samples\Tlds\bv.txt" />
-    <Content Include="Samples\Tlds\bw.txt" />
-    <Content Include="Samples\Tlds\by.txt" />
-    <Content Include="Samples\Tlds\bz.txt" />
-    <Content Include="Samples\Tlds\bzh.txt" />
-    <Content Include="Samples\Tlds\ca.txt" />
-    <Content Include="Samples\Tlds\cab.txt" />
-    <Content Include="Samples\Tlds\cal.txt" />
-    <Content Include="Samples\Tlds\camera.txt" />
-    <Content Include="Samples\Tlds\camp.txt" />
-    <Content Include="Samples\Tlds\cancerresearch.txt" />
-    <Content Include="Samples\Tlds\capetown.txt" />
-    <Content Include="Samples\Tlds\capital.txt" />
-    <Content Include="Samples\Tlds\caravan.txt" />
-    <Content Include="Samples\Tlds\cards.txt" />
-    <Content Include="Samples\Tlds\care.txt" />
-    <Content Include="Samples\Tlds\career.txt" />
-    <Content Include="Samples\Tlds\careers.txt" />
-    <Content Include="Samples\Tlds\casa.txt" />
-    <Content Include="Samples\Tlds\cash.txt" />
-    <Content Include="Samples\Tlds\cat.txt" />
-    <Content Include="Samples\Tlds\catering.txt" />
-    <Content Include="Samples\Tlds\cc.txt" />
-    <Content Include="Samples\Tlds\cd.txt" />
-    <Content Include="Samples\Tlds\center.txt" />
-    <Content Include="Samples\Tlds\ceo.txt" />
-    <Content Include="Samples\Tlds\cern.txt" />
-    <Content Include="Samples\Tlds\cf.txt" />
-    <Content Include="Samples\Tlds\cg.txt" />
-    <Content Include="Samples\Tlds\ch.txt" />
-    <Content Include="Samples\Tlds\channel.txt" />
-    <Content Include="Samples\Tlds\cheap.txt" />
-    <Content Include="Samples\Tlds\christmas.txt" />
-    <Content Include="Samples\Tlds\chrome.txt" />
-    <Content Include="Samples\Tlds\church.txt" />
-    <Content Include="Samples\Tlds\ci.txt" />
-    <Content Include="Samples\Tlds\citic.txt" />
-    <Content Include="Samples\Tlds\city.txt" />
-    <Content Include="Samples\Tlds\ck.txt" />
-    <Content Include="Samples\Tlds\cl.txt" />
-    <Content Include="Samples\Tlds\claims.txt" />
-    <Content Include="Samples\Tlds\cleaning.txt" />
-    <Content Include="Samples\Tlds\click.txt" />
-    <Content Include="Samples\Tlds\clinic.txt" />
-    <Content Include="Samples\Tlds\clothing.txt" />
-    <Content Include="Samples\Tlds\club.txt" />
-    <Content Include="Samples\Tlds\cm.txt" />
-    <Content Include="Samples\Tlds\cn.txt" />
-    <Content Include="Samples\Tlds\co.txt" />
-    <Content Include="Samples\Tlds\codes.txt" />
-    <Content Include="Samples\Tlds\coffee.txt" />
-    <Content Include="Samples\Tlds\college.txt" />
-    <Content Include="Samples\Tlds\cologne.txt" />
-    <Content Include="Samples\Tlds\com.txt" />
-    <Content Include="Samples\Tlds\community.txt" />
-    <Content Include="Samples\Tlds\company.txt" />
-    <Content Include="Samples\Tlds\computer.txt" />
-    <Content Include="Samples\Tlds\condos.txt" />
-    <Content Include="Samples\Tlds\construction.txt" />
-    <Content Include="Samples\Tlds\consulting.txt" />
-    <Content Include="Samples\Tlds\contractors.txt" />
-    <Content Include="Samples\Tlds\cooking.txt" />
-    <Content Include="Samples\Tlds\cool.txt" />
-    <Content Include="Samples\Tlds\coop.txt" />
-    <Content Include="Samples\Tlds\country.txt" />
-    <Content Include="Samples\Tlds\cr.txt" />
-    <Content Include="Samples\Tlds\credit.txt" />
-    <Content Include="Samples\Tlds\creditcard.txt" />
-    <Content Include="Samples\Tlds\crs.txt" />
-    <Content Include="Samples\Tlds\cruises.txt" />
-    <Content Include="Samples\Tlds\cu.txt" />
-    <Content Include="Samples\Tlds\cuisinella.txt" />
-    <Content Include="Samples\Tlds\cv.txt" />
-    <Content Include="Samples\Tlds\cw.txt" />
-    <Content Include="Samples\Tlds\cx.txt" />
-    <Content Include="Samples\Tlds\cy.txt" />
-    <Content Include="Samples\Tlds\cymru.txt" />
-    <Content Include="Samples\Tlds\cz.txt" />
-    <Content Include="Samples\Tlds\dad.txt" />
-    <Content Include="Samples\Tlds\dance.txt" />
-    <Content Include="Samples\Tlds\dating.txt" />
-    <Content Include="Samples\Tlds\day.txt" />
-    <Content Include="Samples\Tlds\de.txt" />
-    <Content Include="Samples\Tlds\deals.txt" />
-    <Content Include="Samples\Tlds\degree.txt" />
-    <Content Include="Samples\Tlds\democrat.txt" />
-    <Content Include="Samples\Tlds\dental.txt" />
-    <Content Include="Samples\Tlds\dentist.txt" />
-    <Content Include="Samples\Tlds\desi.txt" />
-    <Content Include="Samples\Tlds\diamonds.txt" />
-    <Content Include="Samples\Tlds\diet.txt" />
-    <Content Include="Samples\Tlds\digital.txt" />
-    <Content Include="Samples\Tlds\direct.txt" />
-    <Content Include="Samples\Tlds\directory.txt" />
-    <Content Include="Samples\Tlds\discount.txt" />
-    <Content Include="Samples\Tlds\dj.txt" />
-    <Content Include="Samples\Tlds\dk.txt" />
-    <Content Include="Samples\Tlds\dm.txt" />
-    <Content Include="Samples\Tlds\dnp.txt" />
-    <Content Include="Samples\Tlds\do.txt" />
-    <Content Include="Samples\Tlds\domains.txt" />
-    <Content Include="Samples\Tlds\durban.txt" />
-    <Content Include="Samples\Tlds\dvag.txt" />
-    <Content Include="Samples\Tlds\dz.txt" />
-    <Content Include="Samples\Tlds\eat.txt" />
-    <Content Include="Samples\Tlds\ec.txt" />
-    <Content Include="Samples\Tlds\edu.txt" />
-    <Content Include="Samples\Tlds\education.txt" />
-    <Content Include="Samples\Tlds\ee.txt" />
-    <Content Include="Samples\Tlds\eg.txt" />
-    <Content Include="Samples\Tlds\email.txt" />
-    <Content Include="Samples\Tlds\engineer.txt" />
-    <Content Include="Samples\Tlds\engineering.txt" />
-    <Content Include="Samples\Tlds\enterprises.txt" />
-    <Content Include="Samples\Tlds\equipment.txt" />
-    <Content Include="Samples\Tlds\er.txt" />
-    <Content Include="Samples\Tlds\es.txt" />
-    <Content Include="Samples\Tlds\esq.txt" />
-    <Content Include="Samples\Tlds\estate.txt" />
-    <Content Include="Samples\Tlds\et.txt" />
-    <Content Include="Samples\Tlds\eu.txt" />
-    <Content Include="Samples\Tlds\eus.txt" />
-    <Content Include="Samples\Tlds\events.txt" />
-    <Content Include="Samples\Tlds\exchange.txt" />
-    <Content Include="Samples\Tlds\expert.txt" />
-    <Content Include="Samples\Tlds\exposed.txt" />
-    <Content Include="Samples\Tlds\fail.txt" />
-    <Content Include="Samples\Tlds\farm.txt" />
-    <Content Include="Samples\Tlds\feedback.txt" />
-    <Content Include="Samples\Tlds\fi.txt" />
-    <Content Include="Samples\Tlds\finance.txt" />
-    <Content Include="Samples\Tlds\financial.txt" />
-    <Content Include="Samples\Tlds\fish.txt" />
-    <Content Include="Samples\Tlds\fishing.txt" />
-    <Content Include="Samples\Tlds\fitness.txt" />
-    <Content Include="Samples\Tlds\fj.txt" />
-    <Content Include="Samples\Tlds\fk.txt" />
-    <Content Include="Samples\Tlds\flights.txt" />
-    <Content Include="Samples\Tlds\florist.txt" />
-    <Content Include="Samples\Tlds\flsmidth.txt" />
-    <Content Include="Samples\Tlds\fly.txt" />
-    <Content Include="Samples\Tlds\fm.txt" />
-    <Content Include="Samples\Tlds\fo.txt" />
-    <Content Include="Samples\Tlds\foo.txt" />
-    <Content Include="Samples\Tlds\forsale.txt" />
-    <Content Include="Samples\Tlds\foundation.txt" />
-    <Content Include="Samples\Tlds\fr.txt" />
-    <Content Include="Samples\Tlds\frl.txt" />
-    <Content Include="Samples\Tlds\frogans.txt" />
-    <Content Include="Samples\Tlds\fund.txt" />
-    <Content Include="Samples\Tlds\furniture.txt" />
-    <Content Include="Samples\Tlds\futbol.txt" />
-    <Content Include="Samples\Tlds\ga.txt" />
-    <Content Include="Samples\Tlds\gal.txt" />
-    <Content Include="Samples\Tlds\gallery.txt" />
-    <Content Include="Samples\Tlds\gb.txt" />
-    <Content Include="Samples\Tlds\gbiz.txt" />
-    <Content Include="Samples\Tlds\gd.txt" />
-    <Content Include="Samples\Tlds\ge.txt" />
-    <Content Include="Samples\Tlds\gent.txt" />
-    <Content Include="Samples\Tlds\gf.txt" />
-    <Content Include="Samples\Tlds\gg.txt" />
-    <Content Include="Samples\Tlds\gh.txt" />
-    <Content Include="Samples\Tlds\gi.txt" />
-    <Content Include="Samples\Tlds\gift.txt" />
-    <Content Include="Samples\Tlds\gifts.txt" />
-    <Content Include="Samples\Tlds\gives.txt" />
-    <Content Include="Samples\Tlds\gl.txt" />
-    <Content Include="Samples\Tlds\glass.txt" />
-    <Content Include="Samples\Tlds\gle.txt" />
-    <Content Include="Samples\Tlds\global.txt" />
-    <Content Include="Samples\Tlds\globo.txt" />
-    <Content Include="Samples\Tlds\gm.txt" />
-    <Content Include="Samples\Tlds\gmail.txt" />
-    <Content Include="Samples\Tlds\gmo.txt" />
-    <Content Include="Samples\Tlds\gmx.txt" />
-    <Content Include="Samples\Tlds\gn.txt" />
-    <Content Include="Samples\Tlds\google.txt" />
-    <Content Include="Samples\Tlds\gop.txt" />
-    <Content Include="Samples\Tlds\gov.txt" />
-    <Content Include="Samples\Tlds\gp.txt" />
-    <Content Include="Samples\Tlds\gq.txt" />
-    <Content Include="Samples\Tlds\gr.txt" />
-    <Content Include="Samples\Tlds\graphics.txt" />
-    <Content Include="Samples\Tlds\gratis.txt" />
-    <Content Include="Samples\Tlds\green.txt" />
-    <Content Include="Samples\Tlds\gripe.txt" />
-    <Content Include="Samples\Tlds\gs.txt" />
-    <Content Include="Samples\Tlds\gt.txt" />
-    <Content Include="Samples\Tlds\gu.txt" />
-    <Content Include="Samples\Tlds\guide.txt" />
-    <Content Include="Samples\Tlds\guitars.txt" />
-    <Content Include="Samples\Tlds\guru.txt" />
-    <Content Include="Samples\Tlds\gw.txt" />
-    <Content Include="Samples\Tlds\gy.txt" />
-    <Content Include="Samples\Tlds\hamburg.txt" />
-    <Content Include="Samples\Tlds\haus.txt" />
-    <Content Include="Samples\Tlds\healthcare.txt" />
-    <Content Include="Samples\Tlds\help.txt" />
-    <Content Include="Samples\Tlds\here.txt" />
-    <Content Include="Samples\Tlds\hiphop.txt" />
-    <Content Include="Samples\Tlds\hiv.txt" />
-    <Content Include="Samples\Tlds\hk.txt" />
-    <Content Include="Samples\Tlds\hm.txt" />
-    <Content Include="Samples\Tlds\hn.txt" />
-    <Content Include="Samples\Tlds\holdings.txt" />
-    <Content Include="Samples\Tlds\holiday.txt" />
-    <Content Include="Samples\Tlds\homes.txt" />
-    <Content Include="Samples\Tlds\horse.txt" />
-    <Content Include="Samples\Tlds\host.txt" />
-    <Content Include="Samples\Tlds\hosting.txt" />
-    <Content Include="Samples\Tlds\house.txt" />
-    <Content Include="Samples\Tlds\how.txt" />
-    <Content Include="Samples\Tlds\hr.txt" />
-    <Content Include="Samples\Tlds\ht.txt" />
-    <Content Include="Samples\Tlds\hu.txt" />
-    <Content Include="Samples\Tlds\ibm.txt" />
-    <Content Include="Samples\Tlds\id.txt" />
-    <Content Include="Samples\Tlds\ie.txt" />
-    <Content Include="Samples\Tlds\il.txt" />
-    <Content Include="Samples\Tlds\im.txt" />
-    <Content Include="Samples\Tlds\immo.txt" />
-    <Content Include="Samples\Tlds\immobilien.txt" />
-    <Content Include="Samples\Tlds\in.txt" />
-    <Content Include="Samples\Tlds\industries.txt" />
-    <Content Include="Samples\Tlds\info.txt" />
-    <Content Include="Samples\Tlds\ing.txt" />
-    <Content Include="Samples\Tlds\ink.txt" />
-    <Content Include="Samples\Tlds\institute.txt" />
-    <Content Include="Samples\Tlds\insure.txt" />
-    <Content Include="Samples\Tlds\int.txt" />
-    <Content Include="Samples\Tlds\international.txt" />
-    <Content Include="Samples\Tlds\investments.txt" />
-    <Content Include="Samples\Tlds\io.txt" />
-    <Content Include="Samples\Tlds\iq.txt" />
-    <Content Include="Samples\Tlds\ir.txt" />
-    <Content Include="Samples\Tlds\is.txt" />
-    <Content Include="Samples\Tlds\it.txt" />
-    <Content Include="Samples\Tlds\je.txt" />
-    <Content Include="Samples\Tlds\jetzt.txt" />
-    <Content Include="Samples\Tlds\jm.txt" />
-    <Content Include="Samples\Tlds\jo.txt" />
-    <Content Include="Samples\Tlds\jobs.txt" />
-    <Content Include="Samples\Tlds\joburg.txt" />
-    <Content Include="Samples\Tlds\jp.txt" />
-    <Content Include="Samples\Tlds\juegos.txt" />
-    <Content Include="Samples\Tlds\kaufen.txt" />
-    <Content Include="Samples\Tlds\ke.txt" />
-    <Content Include="Samples\Tlds\kg.txt" />
-    <Content Include="Samples\Tlds\kh.txt" />
-    <Content Include="Samples\Tlds\ki.txt" />
-    <Content Include="Samples\Tlds\kim.txt" />
-    <Content Include="Samples\Tlds\kitchen.txt" />
-    <Content Include="Samples\Tlds\kiwi.txt" />
-    <Content Include="Samples\Tlds\km.txt" />
-    <Content Include="Samples\Tlds\kn.txt" />
-    <Content Include="Samples\Tlds\koeln.txt" />
-    <Content Include="Samples\Tlds\kp.txt" />
-    <Content Include="Samples\Tlds\kr.txt" />
-    <Content Include="Samples\Tlds\krd.txt" />
-    <Content Include="Samples\Tlds\kred.txt" />
-    <Content Include="Samples\Tlds\kw.txt" />
-    <Content Include="Samples\Tlds\ky.txt" />
-    <Content Include="Samples\Tlds\kz.txt" />
-    <Content Include="Samples\Tlds\la.txt" />
-    <Content Include="Samples\Tlds\lacaixa.txt" />
-    <Content Include="Samples\Tlds\land.txt" />
-    <Content Include="Samples\Tlds\lawyer.txt" />
+    <Content Include="Samples\Domains\adobe.com.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Domains\amazon.com.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Domains\apple.com.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Domains\baidu.com.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Domains\blogspot.com.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Domains\digg.com.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Domains\facebook.com.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Domains\flickr.com.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Domains\google.com.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Domains\linkedin.com.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Domains\microsoft.com.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Domains\myspace.com.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Domains\pinterest.com.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Domains\qq.com.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Domains\stumbleupon.com.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Domains\tumblr.com.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Domains\twitter.com.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Domains\vimeo.com.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Domains\w3.org.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Domains\wikipedia.org.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Domains\wordpress.com.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Domains\wordpress.org.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Domains\yahoo.com.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Domains\youtu.be.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Domains\youtube.com.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\abogado.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\ac.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\academy.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\accountants.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\active.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\actor.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\ad.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\ae.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\aero.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\af.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\ag.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\agency.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\ai.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\airforce.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\al.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\allfinanz.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\alsace.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\am.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\an.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\ao.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\aq.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\ar.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\archi.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\army.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\arpa.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\as.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\asia.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\associates.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\at.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\attorney.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\au.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\auction.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\audio.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\autos.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\aw.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\ax.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\axa.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\az.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\ba.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\band.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\bar.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\bargains.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\bayern.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\bb.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\bd.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\be.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\beer.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\berlin.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\best.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\bf.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\bg.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\bh.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\bi.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\bid.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\bike.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\bio.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\biz.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\bj.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\black.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\blackfriday.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\blue.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\bm.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\bmw.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\bn.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\bnpparibas.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\bo.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\boo.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\boutique.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\br.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\brussels.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\bs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\bt.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\budapest.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\build.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\builders.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\business.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\buzz.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\bv.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\bw.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\by.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\bz.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\bzh.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\ca.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\cab.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\cal.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\camera.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\camp.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\cancerresearch.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\capetown.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\capital.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\caravan.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\cards.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\care.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\career.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\careers.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\casa.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\cash.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\cat.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\catering.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\cc.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\cd.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\center.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\ceo.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\cern.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\cf.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\cg.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\ch.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\channel.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\cheap.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\christmas.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\chrome.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\church.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\ci.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\citic.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\city.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\ck.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\cl.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\claims.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\cleaning.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\click.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\clinic.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\clothing.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\club.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\cm.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\cn.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\co.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\codes.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\coffee.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\college.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\cologne.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\com.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\community.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\company.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\computer.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\condos.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\construction.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\consulting.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\contractors.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\cooking.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\cool.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\coop.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\country.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\cr.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\credit.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\creditcard.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\crs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\cruises.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\cu.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\cuisinella.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\cv.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\cw.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\cx.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\cy.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\cymru.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\cz.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\dad.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\dance.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\dating.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\day.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\de.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\deals.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\degree.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\democrat.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\dental.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\dentist.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\desi.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\diamonds.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\diet.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\digital.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\direct.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\directory.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\discount.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\dj.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\dk.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\dm.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\dnp.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\do.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\domains.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\durban.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\dvag.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\dz.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\eat.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\ec.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\edu.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\education.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\ee.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\eg.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\email.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\engineer.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\engineering.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\enterprises.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\equipment.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\er.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\es.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\esq.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\estate.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\et.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\eu.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\eus.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\events.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\exchange.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\expert.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\exposed.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\fail.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\farm.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\feedback.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\fi.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\finance.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\financial.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\fish.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\fishing.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\fitness.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\fj.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\fk.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\flights.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\florist.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\flsmidth.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\fly.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\fm.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\fo.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\foo.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\forsale.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\foundation.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\fr.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\frl.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\frogans.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\fund.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\furniture.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\futbol.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\ga.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\gal.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\gallery.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\gb.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\gbiz.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\gd.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\ge.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\gent.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\gf.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\gg.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\gh.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\gi.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\gift.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\gifts.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\gives.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\gl.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\glass.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\gle.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\global.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\globo.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\gm.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\gmail.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\gmo.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\gmx.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\gn.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\google.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\gop.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\gov.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\gp.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\gq.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\gr.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\graphics.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\gratis.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\green.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\gripe.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\gs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\gt.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\gu.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\guide.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\guitars.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\guru.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\gw.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\gy.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\hamburg.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\haus.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\healthcare.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\help.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\here.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\hiphop.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\hiv.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\hk.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\hm.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\hn.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\holdings.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\holiday.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\homes.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\horse.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\host.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\hosting.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\house.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\how.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\hr.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\ht.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\hu.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\ibm.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\id.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\ie.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\il.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\im.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\immo.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\immobilien.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\in.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\industries.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\info.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\ing.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\ink.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\institute.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\insure.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\int.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\international.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\investments.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\io.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\iq.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\ir.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\is.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\it.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\je.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\jetzt.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\jm.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\jo.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\jobs.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\joburg.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\jp.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\juegos.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\kaufen.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\ke.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\kg.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\kh.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\ki.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\kim.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\kitchen.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\kiwi.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\km.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\kn.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\koeln.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\kp.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\kr.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\krd.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\kred.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\kw.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\ky.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\kz.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\la.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\lacaixa.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\land.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Tlds\lawyer.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Samples\Domains\sphinn.com.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

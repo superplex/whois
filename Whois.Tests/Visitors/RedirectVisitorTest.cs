@@ -18,7 +18,7 @@ namespace Whois.Visitors
         [Test]
         public void TestIsARedirectWhenTrue()
         {
-            var record = new WhoisRecord(File.ReadAllText(@"..\..\Samples\Domains\sphinn.com.txt"));
+            var record = new WhoisRecord(File.ReadAllText(Utils.GetFullPath("Samples/Domains/sphinn.com.txt")));
             WhoisRedirect redirect;
 
             var result = visitor.IsARedirectRecord(record, out redirect);

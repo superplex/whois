@@ -13,7 +13,7 @@ namespace Whois.TopDomains
         public void TestParseTopDomains()
         {
             var fails = new List<string>();
-            var files = Directory.GetFiles("..\\..\\Samples", "*.txt");
+            var files = Directory.GetFiles("Samples", "*.txt");
 
             var visitor = new PatternExtractorVisitor();
 

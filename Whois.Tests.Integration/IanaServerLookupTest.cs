@@ -20,7 +20,7 @@ namespace Whois
         {
             var result = lookup.Lookup("google.be");
 
-            Assert.AreEqual("", result);
+            Assert.AreEqual("be", result.TLD);
         }
     }
 }

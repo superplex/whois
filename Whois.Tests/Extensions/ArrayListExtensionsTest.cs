@@ -19,7 +19,7 @@ namespace Whois.Extensions
         {
             var array = new ArrayList { "First", "Second", "Third" };
 
-            Assert.AreEqual("First\r\nSecond\r\nThird\r\n", array.AsString());
+            Assert.AreEqual("First\nSecond\nThird\n", array.AsString());
         }
 
         [Test]
